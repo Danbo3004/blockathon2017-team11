@@ -1,0 +1,7 @@
+{
+  "name": "Voting",
+  "dependencies": {
+    "express": "latest",
+    "web3": "latest"
+  }
+}
