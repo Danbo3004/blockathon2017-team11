@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="ENTERVOTE ONLINE WITH APP" />
+  <title>ENTERVOTE ONLINE WITH APP</title>
+</head>
+<body class="container">
+  <header role="banner">
+    <nav id="navbar-primary" class="navbar" role="navigation">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-primary-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-primary-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="!#app2">HH Hoàn vũ</a></li>
+            <li><a href="!#app3">
+              <img id="logo-navbar-middle" style="width: 80px;" class="img-circle" src="app/images/logo.jpg" width="200" alt="Logo Thing main logo"></a></li>
+            <li><a href="#">HH Hoàn vũ 2</a></li>
+            <li><a href="#">HH Hoàn vũ 3</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    </header><!-- header role="banner" -->
+   <div style="text-align: center;" >
+      <h1 id="h1_title"></h1>
+      <span id="total_votes" style="text-align: center;font-size: 2em;"></span>
+   </div>
+   <div class="container-fluid">
+    <div class="row">
+    <div class="panel panel-primary">
+            <div class="panel-body two-col" id="candidate_id">
+                <div class="row">
+                    <div class="col-sm-3" style="text-align: center;">
+                        <div class="margin-bottom-none">
+                            <div class="checkbox">
+                                <label>
+                                    <img class="img-circle img-thumbnail img-check" src="app/images/demo01.jpg" />
+                                  <span class="name">Nguyễn Thị Thu<label class="sub-name">Số báo danh: </label><label>2017-114</label><label class="sub-name">Số lượt bình chọn: </label><label id="candidate1"></label></span>
+                                    <input type="checkbox" name="cadidates[]" value="1" class="hidden" autocomplete="off">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3" style="text-align: center;">
+                        <div class="margin-bottom-none">
+                            <div class="checkbox">
+                                <label>
+                                    <img class="img-circle img-thumbnail img-check" src="app/images/demo02.png" />
+                                  <span class="name">Bùi Mộng Cầm<label class="sub-name">Số báo danh: </label><label>2017-115</label><label class="sub-name">Số lượt bình chọn: </label><label id="candidate2"></label></span>
+                                    <input type="checkbox" name="cadidates[]" value="2" class="hidden" autocomplete="off">
+                                </label>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-sm-3" style="text-align: center;">
+                        <div class="margin-bottom-none">
+                          <label>
+                            <div class="checkbox">
+                                <label >
+                                  <img class="img-circle img-thumbnail img-check" src="app/images/demo03.jpg" />
+                                  <span class="name">Vũ Thị Tuyết Trang<label class="sub-name">Số báo danh: </label><label>2017-116</label><label class="sub-name">Số lượt bình chọn: </label><label id="candidate3"></label></span>
+                                    <input type="checkbox" name="cadidates[]" value="3" class="hidden" autocomplete="off">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3" style="text-align: center;">
+                        <div class="margin-bottom-none">
+                            <div class="checkbox">
+                                <label>
+                                    <img class="img-circle img-thumbnail img-check" src="app/images/demo04.jpg" />
+                                  <span class="name">Đặng Thị Thu Thảo <br><label class="sub-name">Số báo danh: </label><label>2017-117</label><br><label class="sub-name">Số lượt bình chọn: </label><label id="candidate4"></label></span>
+                                    <input type="checkbox" name="cadidates[]" value="4" class="hidden" autocomplete="off">
+                                </label>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer" style="text-align: center;">
+                <button onclick="voteForCandidate()" type="button" class="btn btn-success btn-default">
+                <span class="glyphicon glyphicon-ok"></span>Bình chọn</button>
+            </div>
+        </div>
+      </div>
+  </div>
+  <div class="col-sm-12">
+    <div class="row">
+      <div id="txt_transaction"></div>
+      <h2>Thông tin Người bình chọn</h2>
+            <div class="form-group">
+                <input type="text" id="voter-info" class="form-control " placeholder="Enter the voter address"/>
+                <a style="margin-top: 5px;" href="#" onclick="lookupVoterInfo()" class="btn btn-primary">Xem</a>
+            </div>
+            <div class="voter-details row text-left">
+              <div id="votes-cast" class="col-md-12"></div>
+            </div>
+      </div>
+  </div>
+  <div id="loading_container">
+      <div id="loading_container2">
+        <div id="loading_container3">
+          <div id="loading_container4">
+            Cảm ơn bạn đã tham gia bình chọn, vui lòng chờ giấy lát....
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+<script src="app/javascripts/jquery-3.1.1.slim.min.js"></script>
+<script src="app/javascripts/jquery.min.js"></script>
+<script src="app.js"></script>
+</html>

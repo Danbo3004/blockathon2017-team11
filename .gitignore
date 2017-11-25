@@ -1,4 +1,7 @@
 node_modules
+<<<<<<< HEAD
 build
 build/*
+=======
+>>>>>>> 64e2fd98b7729892945fa419a6a3cf5a05108029
 node_modules/*
