@@ -2,6 +2,6 @@
   "name": "Voting",
   "dependencies": {
     "express": "latest",
-    "web3": "latest"
+    "web3": "^0.20.0"
   }
 }

@@ -16,17 +16,17 @@ contract Voting {
   struct VoterInfo {
     // eventId -> candidateIds
     mapping (uint => VotingInfo) votings;
-    uint[] votedCandidates;
+    mapping (uint => uint[]) votedCandidates;
   }
 
   mapping (uint => EventData) events;
   mapping (address => VoterInfo) voters;
 
-  function voteForCandidate(uint eventId, uint[] candidates) public returns(bool) {
+  function voteForCandidate(uint eventId, uint[] candidates) public {
     for(uint i = 0; i < candidates.length; i++) {
       if (!voted(eventId, candidates[i])) {
         voters[msg.sender].votings[eventId].isVotingFor[candidates[i]] = true;
-        voters[msg.sender].votedCandidates.push(candidates[i]);
+        voters[msg.sender].votedCandidates[eventId].push(candidates[i]);
         events[eventId].voterCount++;
         events[eventId].candidates[candidates[i]]++;
       }
@@ -41,8 +41,8 @@ contract Voting {
     return events[eventId].voterCount;
   }
 
-  function voteInfo(address _addr, uint eventId) constant public returns (uint[]) {
-    return voters[_addr].votedCandidates;
+  function voteInfo(address addr, uint eventId) constant public returns (uint[]) {
+    return voters[addr].votedCandidates[eventId];
   }
 
   function totalVotesFor(uint eventId, uint candidateId) constant public returns (uint) {

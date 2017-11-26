@@ -64,13 +64,16 @@ window.voteForCandidate = function() {
 }
 
 window.lookupVoterInfo = function() {
-  let address = $("#voter-info").val();
+  let address = $("#voter-info").val().toString().trim();
   $("#votes-cast").html("");
   Voting.deployed().then(function(contractInstance) {
     contractInstance.voteInfo.call(address, eventId).then(function(v) {
+      var html_txt = '<ul class="list-group">';
       for(let i=0; i < v.length; i++) {
-        $("#votes-cast").append(candidateName[v[i]] + "<br>");
+        html_txt += '<li class="list-group-item">' + candidateName[v[i]] + "</li>";
       }
+      html_txt += '</ul>';
+      $("#votes-cast").append(html_txt);
     });
   });
 }
